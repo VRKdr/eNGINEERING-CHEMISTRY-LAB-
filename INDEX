@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Chemistry Lab Manual</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #008CBA;
+            color: white;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            text-align: center;
+        }
+        li:hover {
+            background: #005f73;
+        }
+        .experiment-details {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Engineering Chemistry Lab Manual</h1>
+        <h2>List of Experiments</h2>
+        <ul id="experiment-list">
+            <li onclick="showExperiment(1)">1. Calibration of Volumetric Apparatus</li>
+            <li onclick="showExperiment(2)">2. Determination of Hardness of Water</li>
+            <li onclick="showExperiment(3)">3. Determination of Sulphuric Acid in Lead-Acid Battery</li>
+            <li onclick="showExperiment(4)">4. Estimation of Zinc by EDTA</li>
+            <li onclick="showExperiment(5)">5. Estimation of Chromium in Potassium Dichromate</li>
+        </ul>
+        
+        <div id="experiment-details" class="experiment-details">
+            <h2 id="experiment-title"></h2>
+            <p id="experiment-content"></p>
+        </div>
+    </div>
+
+    <script>
+        const experiments = {
+            1: {
+                title: "Calibration of Volumetric Apparatus",
+                content: "Volumetric glassware like burettes, pipettes, and flasks require calibration for accuracy. This experiment focuses on measuring the error and adjusting calculations accordingly."
+            },
+            2: {
+                title: "Determination of Hardness of Water",
+                content: "Using EDTA titration to determine the presence of calcium and magnesium ions in water samples."
+            },
+            3: {
+                title: "Determination of Sulphuric Acid in Lead-Acid Battery",
+                content: "Titration of sulphuric acid against sodium hydroxide to determine its concentration in lead-acid batteries."
+            },
+            4: {
+                title: "Estimation of Zinc by EDTA",
+                content: "Complexometric titration method using Eriochrome Black-T indicator to estimate zinc content."
+            },
+            5: {
+                title: "Estimation of Chromium in Potassium Dichromate",
+                content: "Redox titration of potassium dichromate using diphenylamine as an indicator."
+            }
+        };
+
+        function showExperiment(expNumber) {
+            document.getElementById("experiment-title").innerText = experiments[expNumber].title;
+            document.getElementById("experiment-content").innerText = experiments[expNumber].content;
+            document.getElementById("experiment-details").style.display = "block";
+        }
+    </script>
+</body>
+</html>
